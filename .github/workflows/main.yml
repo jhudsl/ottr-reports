@@ -43,6 +43,9 @@ jobs:
     steps:
     - name: Checkout Actions Repository
       uses: actions/checkout@v4
+
+    - name: Checkout Actions Repository
+      uses: actions/checkout@v4
       with:
         repository: 'jhudsl/ottr-reports'
         ref: 'acoffman/artifacts'
