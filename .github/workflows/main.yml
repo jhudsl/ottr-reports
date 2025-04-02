@@ -38,11 +38,13 @@ on:
     branches: [ main, dev ]
 
 jobs:
-  spell-check:
+  ottr-reports:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Actions Repository
       uses: actions/checkout@v4
+      with:
+        ref: 'acoffman/artifacts'
 
     - name: Run Reports
       id: run-reports
