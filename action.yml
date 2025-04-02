@@ -60,7 +60,6 @@ runs:
       uses: actions/checkout@v4
       with:
         fetch-depth: 0
-        token: ${{ inputs.token }}
 
     # Find existing comment to update
     - name: Find Comment
@@ -210,7 +209,6 @@ runs:
           # OTTR Check Results
           
           ### Check Summary
-          ${CHECK_SUMMARY}
           ${{ inputs.check_spelling == 'true' && format('- Spelling check: {0} {1} ({2} errors found, threshold: {3})', 
             steps.spelling_check.outputs.status == 'success' && ':white_check_mark:' || ':x:',
             steps.spelling_check.outputs.status == 'success' && 'PASSED' || 'FAILED',
