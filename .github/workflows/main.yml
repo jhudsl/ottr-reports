@@ -7,38 +7,6 @@ on:
   pull_request:
     branches: [ main, dev ]
 
-inputs:
-  check_spelling:
-    description: "Whether to run the spelling check"
-    default: false
-    type: boolean
-  check_urls:
-    description: "Whether to run the URL check"
-    default: false
-    type: boolean
-  check_quiz_form:
-    description: "Whether to run the quiz format check"
-    default: false
-    type: boolean
-  spelling_error_min:
-    description: "Number of spelling errors that should make this check fail"
-    default: 0
-    type: number
-  url_error_min:
-    description: "Number of URL errors that should make this check fail"
-    default: 0
-    type: number
-  quiz_error_min:
-    description: "Number of quiz format errors that should make this check fail"
-    default: 0
-    type: number
-  sort_dictionary:
-    description: "Should this action automatically alphabetize your dictionary.txt"
-    default: false
-    type: boolean
-  token:
-    required: true
-
 jobs:
   spell-check:
     runs-on: ubuntu-latest
@@ -51,11 +19,11 @@ jobs:
       uses: ./
       with:
         token: ${{ secrets.GH_PAT }}
-        check_spelling: ${{inputs.check_spelling}}
-        spelling_error_min: ${{ inputs.spelling_error_min }}
-        check_urls: ${{ inputs.check_urls }}
-        url_error_min: ${{ inputs.url_error_min }}
-        check_quiz_form: ${{ inputs.check_quiz_form }}
-        quiz_error_min: ${{ inputs.quiz_error_min }}
+        check_spelling: true
+        spelling_error_min: 0
+        check_urls: true
+        url_error_min: 0
+        check_quiz_form: true
+        quiz_error_min: 0
         branch_name: ${GITHUB_HEAD_REF}
         sort_dictionary: true
