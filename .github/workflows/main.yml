@@ -32,8 +32,6 @@ on:
         description: "Should this action automatically alphabetize your dictionary.txt"
         default: false
         type: boolean
-      token:
-        required: true
 
   workflow_dispatch:
   pull_request:
