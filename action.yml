@@ -208,7 +208,7 @@ runs:
         body: |
           # OTTR Check Results
           
-          ### Check Summary
+          ### Summary
           ${{ inputs.check_spelling == 'true' && format('- Spelling check: {0} {1} ({2} errors found, threshold: {3})', 
             steps.spelling_check.outputs.status == 'success' && ':white_check_mark:' || ':x:',
             steps.spelling_check.outputs.status == 'success' && 'PASSED' || 'FAILED',
@@ -225,7 +225,7 @@ runs:
             steps.quiz_check.outputs.error_num,
             inputs.quiz_error_min) || '' }}
           
-          ${{ steps.package_artifacts.outputs.any_failures == 'true' && format('### :warning: Failures Detected\n\n[Click here to download detailed error reports]({0})', steps.upload_artifacts.outputs.artifact-url) || '### :tada: All checks passed!' }}
+          ${{ steps.package_artifacts.outputs.any_failures == 'true' && format('### :warning: Some Checks Failed [Click here to download detailed error reports]({0})', steps.upload_artifacts.outputs.artifact-url) || '### :tada: All checks passed!' }}
           
           _Last updated: 2025-04-02 16:18:06 UTC_
         edit-mode: replace
