@@ -44,11 +44,13 @@ jobs:
     - name: Checkout Actions Repository
       uses: actions/checkout@v4
       with:
+        repository: 'jhudsl/ottr-reports'
         ref: 'acoffman/artifacts'
+        path: ottr-reports
 
     - name: Run Reports
       id: run-reports
-      uses: ./
+      uses: ./ottr-reports
       with:
         token: ${{ secrets.GH_PAT }}
         check_spelling: ${{inputs.check_spelling}}
