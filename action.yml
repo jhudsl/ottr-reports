@@ -81,7 +81,7 @@ runs:
           # OTTR Check Results
           :runner: Checks are currently running...
 
-          _Last updated: ${{ steps.build-components.outputs.time }}
+          _Last Updated: ${{ steps.build-components.outputs.time }}_
         edit-mode: replace
 
     # Spelling Check
@@ -227,7 +227,7 @@ runs:
           
           ${{ steps.package_artifacts.outputs.any_failures == 'true' && format('### :warning: Some Checks Failed [Click here to download detailed error reports]({0})', steps.upload_artifacts.outputs.artifact-url) || '### :tada: All checks passed!' }}
           
-          _Last updated: 2025-04-02 16:18:06 UTC_
+          _Last Updated: ${{ steps.build-components.outputs.time }}_
         edit-mode: replace
 
     # Final exit if any checks failed
