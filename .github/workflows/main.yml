@@ -61,3 +61,10 @@ jobs:
         quiz_error_min: ${{ inputs.quiz_error_min }}
         branch_name: ${GITHUB_HEAD_REF}
         sort_dictionary: true
+
+    - name: Checkout Actions Repository
+      uses: actions/checkout@v4
+      with:
+        repository: 'jhudsl/ottr-reports'
+        ref: 'acoffman/artifacts'
+        path: ottr-reports

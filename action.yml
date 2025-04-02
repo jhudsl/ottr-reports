@@ -59,7 +59,6 @@ runs:
     - name: Checkout
       uses: actions/checkout@v4
       with:
-        path: ${{ github.repository }}
         fetch-depth: 0
 
     # Find existing comment to update
