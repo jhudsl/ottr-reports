@@ -45,7 +45,7 @@ jobs:
     
     - name: Run Reports
       id: run-reports
-      uses: ./ottr-reports
+      uses: ottrproject/ottr-reports@cansavvy-patch-1
       with:
         token: ${{ secrets.GH_PAT }}
         check_spelling: ${{inputs.check_spelling}}
