@@ -41,6 +41,8 @@ jobs:
   ottr-reports:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v4 
+    
     - name: Run Reports
       id: run-reports
       uses: ./ottr-reports
