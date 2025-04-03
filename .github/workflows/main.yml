@@ -41,13 +41,6 @@ jobs:
   ottr-reports:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Actions Repository
-      uses: actions/checkout@v4
-      with:
-        repository: 'jhudsl/ottr-reports'
-        ref: 'acoffman/artifacts'
-        path: ottr-reports
-
     - name: Run Reports
       id: run-reports
       uses: ./ottr-reports
@@ -61,10 +54,3 @@ jobs:
         quiz_error_min: ${{ inputs.quiz_error_min }}
         branch_name: ${GITHUB_HEAD_REF}
         sort_dictionary: true
-
-    - name: Checkout Actions Repository
-      uses: actions/checkout@v4
-      with:
-        repository: 'jhudsl/ottr-reports'
-        ref: 'acoffman/artifacts'
-        path: ottr-reports
